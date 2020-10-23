@@ -4,11 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
+require('dotenv').config()
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// Routers
+var catalogRouter = require('./routes/catalog');
 
 var app = express();
+
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
@@ -38,8 +40,7 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', catalogRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

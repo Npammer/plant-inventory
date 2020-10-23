@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<p>Name: {{category.name}}</>
+<p>Description: {{category.description}}</p>
+
+
+{{#each plants as |plant|}}
+<a href="{{plant.link}}">{{plant.name}}</a>
+{{/each}}
+
+<a href="/categories" class="btn btn-primary btn-block mt-4">Category list</a>

@@ -27,5 +27,9 @@ var PlantSchema = new Schema({
     }
 });
 
+PlantSchema.virtual('link').get(function () {
+    return `/plant/${this._id}`;
+});
+
 //Export model
 module.exports = mongoose.model('Plant', PlantSchema);

@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<ul>
+    {{#each category_list}}
+    <a href="{{this.link}}">
+        <li class="mb-1">{{this.name}}</li>
+    </a>
+    {{/each}}
+</ul>
