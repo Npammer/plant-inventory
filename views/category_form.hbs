@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+
+<form method="POST" action="">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" required="true"
+            value="{{#if category.name}}{{category.name}}{{/if}}">
+
+        <label for="description" class="mt-2">Description:</label>
+        <input type="text" class="form-control" name="description" required="false"
+            value="{{#if category.description}}{{category.description}}{{/if}}">
+
+        <label for="url" class="mt-2">Url:</label>
+        <input type="text" class="form-control" name="url" required="false"
+            value="{{#if category.url}}{{category.url}}{{/if}}">
+
+        <button type="submit" class="btn btn-primary btn-block mt-4">Add category</button>
+    </div>
+</form>

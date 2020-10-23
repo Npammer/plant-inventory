@@ -1,0 +1,36 @@
+<h1>{{title}}</h1>
+
+<form action="POST" action="">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" required="true"
+            value="{{#if plant.name}}{{plant.name}}{{/if}}">
+
+        <label for="description" class="mt-2">Description:</label>
+        <input type="text" class="form-control" name="description" required="false"
+            value="{{#if plant.description}}{{plant.description}}{{/if}}">
+
+        <label for="price" class="mt-2 d-block">Price:</label>
+        <input type="number" class="form-control" name="price" required="true"
+            value="{{#if plant.price}}{{plant.price}}{{/if}}">
+
+        <label for="in_stock" class="mt-2">In stock:</label>
+        <input type="number" class="form-control" name="in_stock" required="true"
+            value="{{#if plant.in_stock}}{{plant.in_stock}}{{/if}}">
+
+        <label for="url" class="mt-2">Url:</label>
+        <input type="text" class="form-control" name="url" required="false"
+            value="{{#if plant.url}}{{plant.url}}{{/if}}">
+
+        <label class="mt-4">Categories:</label>
+        {{#each categories as |category|}}
+        <div class="d-inline pr-1">
+            <input type="checkbox" class="checkbox-input" name="category" id="{{category._id}}"
+                value="{{category._id}}">
+            <label for="{{category._id}}" class="ml-1">{{category.name}}</label>
+        </div>
+        {{/each}}
+
+        <button type="submit" class="btn btn-primary btn-block mt-4">Add Plant</button>
+    </div>
+</form>

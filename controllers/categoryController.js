@@ -1,5 +1,9 @@
 const Category = require("../models/category");
 const Plant = require("../models/plant");
+const {
+  body,
+  validationResult
+} = require("express-validator");
 
 var async = require("async");
 
@@ -17,16 +21,49 @@ exports.category_list = function (req, res) {
 };
 
 exports.category_create_get = function (req, res) {
-  res.send("NOT IMPLEMENTED: Category create get");
+  res.render("category_form", {
+    title: "Create category",
+  });
 };
 
-exports.category_create_post = function (req, res) {
-  res.send("NOT IMPLEMENTED: Category create post");
-};
+exports.category_create_post = [
+  body("name", "Title must not be empty.")
+  .trim()
+  .isLength({
+    min: 1,
+  })
+  .escape(),
+  body("description").trim().escape(),
+  body("url").trim().escape(),
 
-exports.category_delete_get = function (req, res) {
-  res.send("NOT IMPLEMENTED: Category delete get");
-};
+  // Process request after validation and sanitization.
+  (req, res, next) => {
+    // Extract the validation errors from a request.
+    const errors = validationResult(req);
+
+    // Create a Book object with escaped and trimmed data.
+    let category = new Category({
+      name: req.body.name,
+      description: req.body.description,
+      url: req.body.url,
+    });
+
+    if (!errors.isEmpty()) {
+      res.render("category_form", {
+        title: "Create category",
+      });
+    } else {
+      // Data from form is valid. Save book.
+      category.save(function (err) {
+        if (err) {
+          return next(err);
+        }
+        //successful - redirect to new book record.
+        res.redirect(category.link);
+      });
+    }
+  },
+];
 
 exports.category_delete_post = function (req, res) {
   res.send("NOT IMPLEMENTED: Category delete post");
@@ -41,8 +78,7 @@ exports.category_update_post = function (req, res) {
 };
 
 exports.category_detail = function (req, res, next) {
-  async.parallel(
-    {
+  async.parallel({
       category: function (callback) {
         Category.findById(req.params.id).exec(callback);
       },
