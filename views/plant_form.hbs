@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 
-<form action="POST" action="">
+<form method="POST" action="">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" name="name" required="true"
@@ -26,11 +26,12 @@
         {{#each categories as |category|}}
         <div class="d-inline pr-1">
             <input type="checkbox" class="checkbox-input" name="category" id="{{category._id}}"
-                value="{{category._id}}">
+                {{#if category.checked}}checked="true" {{/if}} value="{{category._id}}">
             <label for="{{category._id}}" class="ml-1">{{category.name}}</label>
         </div>
         {{/each}}
 
-        <button type="submit" class="btn btn-primary btn-block mt-4">Add Plant</button>
+        <button type="submit" class="btn btn-primary btn-block mt-4">{{#if plant}}Update Plant{{else}}Add
+            Plant{{/if}}</button>
     </div>
 </form>
