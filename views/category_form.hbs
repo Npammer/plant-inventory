@@ -11,9 +11,8 @@
             value="{{#if category.description}}{{category.description}}{{/if}}">
 
         <label for="url" class="mt-2">Url:</label>
-        <input type="text" class="form-control" name="url" required="false"
-            value="{{#if category.url}}{{category.url}}{{/if}}">
+        <input type="text" class="form-control" name="url" value="{{#if category.url}}{{category.url}}{{/if}}">
 
-        <button type="submit" class="btn btn-primary btn-block mt-4">Add category</button>
+        <button type="submit" class="btn btn-primary btn-block mt-4">{{title}}</button>
     </div>
 </form>

@@ -4,9 +4,12 @@
 <p>Name: {{category.name}}</>
 <p>Description: {{category.description}}</p>
 
+{{#if delete}}<p>You need to delete all the plants below before trying to delete this category!</p>{{/if}}
 
 {{#each plants as |plant|}}
 <a href="{{plant.link}}">{{plant.name}}</a>
 {{/each}}
 
+<a href="{{category.link}}/update" class="btn btn-warning btn-block mt-4">Update category</a>
+<a href="{{category.link}}/delete" class="btn btn-danger btn-block mt-4">Delete category</a>
 <a href="/categories" class="btn btn-primary btn-block mt-4">Category list</a>
