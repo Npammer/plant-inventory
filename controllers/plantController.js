@@ -12,7 +12,9 @@ const {
 var async = require("async");
 
 exports.index = function (req, res) {
-    res.send("NOT IMPLEMENTED: Index page");
+    res.render("index", {
+        title: "Plants-inventory"
+    });
 };
 
 exports.plant_list = function (req, res, next) {
