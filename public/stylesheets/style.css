@@ -10,7 +10,7 @@ body {
   width: 100vw; }
 
 header {
-  height: 10%;
+  height: 14%;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -63,37 +63,38 @@ header {
     transform: rotate(-45deg) translate(35px, 35px); }
 
 .nav {
-  height: 90%;
+  height: 86%;
   background: linear-gradient(180deg, #0F914C 40.63%, #8BC249 95.83%);
   display: flex;
   align-items: center;
   z-index: 1;
   flex-direction: column; }
   .nav h1 {
-    margin-top: 1em;
+    margin-top: 0.5em;
     font-size: 6em;
     color: white;
     letter-spacing: 0.11em;
     font-weight: 450; }
   .nav hr {
+    margin: 32px 0 64px 0;
     border-top: 2px solid white;
-    width: 80%;
-    margin-bottom: 76px; }
+    width: 80%; }
   .nav nav {
     display: flex;
     flex-direction: column;
     align-items: center; }
     .nav nav a .nav-links {
       display: flex;
-      margin-bottom: 120px; }
+      margin-bottom: 60px; }
       .nav nav a .nav-links h2, .nav nav a .nav-links i {
         font-size: 5em;
-        color: white; }
+        color: white;
+        z-index: 2; }
       .nav nav a .nav-links i {
         margin-left: 24px; }
   .nav .nav-img {
     position: absolute;
     bottom: 40px;
-    width: 67%; }
+    height: 40%; }
 
 /*# sourceMappingURL=style.css.map */
