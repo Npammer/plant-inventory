@@ -5,11 +5,13 @@
 
 body
   font: 14px "Avenir Next", sans-serif
-  height: 100vh
+  height: 100vh // fallback
+  // Calculate vh
+  height: calc(var(#{--vh}, 1vh) * 100)
   width: 100vw
 
 header
-  height: 10vh
+  height: 10%
   padding: 16px
   display: flex
   justify-content: space-between
@@ -67,10 +69,9 @@ header
     transform: rotate(-45deg) translate(35px, 35px)
 
 .menu-btn.open .nav
-  
 
 .nav
-  height: 90vh
+  height: 90%
   background: linear-gradient(180deg, #0F914C 40.63%, #8BC249 95.83%)
   display: flex
   align-items: center
