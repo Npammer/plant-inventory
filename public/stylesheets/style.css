@@ -7,7 +7,9 @@ body {
   font: 14px "Avenir Next", sans-serif;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  width: 100vw; }
+  width: 100vw;
+  overflow-x: hidden;
+  position: fixed; }
 
 header {
   height: 14%;
@@ -64,6 +66,7 @@ header {
 
 .nav {
   height: 86%;
+  width: 100%;
   background: linear-gradient(180deg, #0F914C 40.63%, #8BC249 95.83%);
   display: flex;
   align-items: center;
