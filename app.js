@@ -7,8 +7,8 @@ var sassMiddleware = require('node-sass-middleware');
 require('dotenv').config()
 
 // Routers
-var catalogRouter = require('./routes/catalog');
 var staticRouter = require('./routes/static');
+var catalogRouter = require('./routes/catalog');
 
 
 var app = express();
