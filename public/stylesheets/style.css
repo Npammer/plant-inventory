@@ -202,4 +202,24 @@ header {
         font-size: 6em;
         color: #000000a1; }
 
+.plant-list {
+  height: 86%;
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px; }
+  .plant-list h1 {
+    font-size: 5.5em;
+    line-height: 1.2em;
+    text-align: center;
+    letter-spacing: 0.1em; }
+  .plant-list hr {
+    margin: 32px 0;
+    border-top: 2px solid rgba(15, 145, 76, 0.521);
+    width: 80%; }
+  .plant-list ul li {
+    font-size: 4em; }
+
 /*# sourceMappingURL=style.css.map */

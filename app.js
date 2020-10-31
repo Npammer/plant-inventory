@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', staticRouter);
-app.use('/', catalogRouter);
+app.use('/inventory/', catalogRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

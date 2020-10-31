@@ -1,10 +1,12 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="plant-list">
+    <h1>Plants</h1>
+    <hr>
 
-<ul>
-    {{#each plant_list}}
-    <a href="{{this.link}}">
-        <li class="mb-1">{{this.name}}</li>
-    </a>
-    {{/each}}
-</ul>
+    <ul>
+        {{#each plant_list}}
+        <a href="{{this.link}}">
+            <li class="mb-1">{{this.name}}</li>
+        </a>
+        {{/each}}
+    </ul>
+</div>

@@ -28,7 +28,7 @@ var PlantSchema = new Schema({
 });
 
 PlantSchema.virtual('link').get(function () {
-    return `/plant/${this._id}`;
+    return `/inventory/plant/${this._id}`;
 });
 
 //Export model
