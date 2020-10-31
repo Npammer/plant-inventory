@@ -8,6 +8,7 @@ require('dotenv').config()
 
 // Routers
 var catalogRouter = require('./routes/catalog');
+var staticRouter = require('./routes/static');
 
 
 var app = express();
@@ -41,6 +42,8 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
+app.use('/', staticRouter);
 app.use('/', catalogRouter);
 
 // catch 404 and forward to error handler

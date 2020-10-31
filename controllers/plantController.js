@@ -11,11 +11,6 @@ const {
 // Async
 var async = require("async");
 
-exports.index = function (req, res) {
-    res.render("index", {
-        title: "Plants-inventory"
-    });
-};
 
 exports.plant_list = function (req, res, next) {
     Plant.find({})

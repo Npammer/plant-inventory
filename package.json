@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
+    "devupdate": "browser-sync start --proxy 'http://localhost:3001' --files './public/stylesheets/*.sass'",
     "serverstart": "DEBUG=plant-inventory:* yarn start"
   },
   "dependencies": {

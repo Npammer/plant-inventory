@@ -11,12 +11,15 @@ body
   overflow-x: hidden
   position: fixed
 
+// Components
+
 header
   height: 14%
   padding: 16px
   display: flex
   justify-content: space-between
   align-items: center
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.39)
   a
     line-height: 1
     display: contents
@@ -24,6 +27,8 @@ header
     .logo
       object-fit: contain
       width: 70%
+
+// Burger
 
 .menu-btn
   margin-right: 8px
@@ -56,7 +61,7 @@ header
   &::after
     transform: translateY(24px)
 
-/* ANIMATION
+// ANIMATION
 .menu-btn.open
   // TODO: Animating padding preformance issues?
   padding: 2px
@@ -71,7 +76,7 @@ header
   &::after
     transform: rotate(-45deg) translate(35px, 35px)
 
-.menu-btn.open .nav
+// Nav
 
 .nav
   height: 86%
@@ -113,7 +118,11 @@ header
     bottom: 40px
     height: 40%
 
-// Components
+// Content
+
+.content-container
+  margin: 64px
+
 .content-box
   display: flex
   flex-direction: column
@@ -137,6 +146,8 @@ header
     text-align: center
     margin-bottom: 1em
 
+// Main btn
+
 .main-btn
   text-decoration: none
   background: linear-gradient(180deg, #8BC249 0%, #0F914C 79.17%)
@@ -148,10 +159,38 @@ header
   width: 80%
   text-align: center
 
+// Background logo
+.background-logo
+  height: 40%
+  position: absolute
+  bottom: -10%
+  right: -15%
+  z-index: -1
+  opacity: 0.4
+
+// avatar
+.avatar-container
+  display: flex
+  justify-content: center
+  position: relative
+  .avatar
+    width: 50%
+    height: 50%
+    border-radius: 50%
+    border: 4px solid #0F914C
+  .avatar-logo
+    position: absolute
+    height: 50%
+    bottom: -9%
+    right: 20%
+
+// PAGES
+
 // INDEX
 .index
   height: 86%
   width: 100%
+  overflow-y: scroll
   .banner // TODO: Fix img
     width: 100%
     height: 20%
@@ -163,5 +202,28 @@ header
       background: #ffffff8c
       position: absolute
       bottom: 0
-  .content
-    margin: 64px
+
+// ABOUT US
+
+.about-us
+  height: 86%
+  width: 100%
+  overflow-y: scroll
+  .avatar-content
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 1.5em
+    h3
+      margin-bottom: 0.1em
+      font-size: 4em
+    h4
+      font-size: 2em
+    .avatar-social
+      display: flex
+      margin-top: 0.7em
+      .avatar-icon-left
+        margin-right: 0.4em
+      .avatar-icon
+        font-size: 6em
+        color: #000000a1

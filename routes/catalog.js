@@ -5,9 +5,6 @@ var router = express.Router();
 const plant_controller = require("../controllers/plantController");
 const category_controller = require("../controllers/categoryController");
 
-// INDEX ROUTE
-router.get("/", plant_controller.index);
-
 // PLANT ROUTES
 
 router.get("/plants", plant_controller.plant_list);
