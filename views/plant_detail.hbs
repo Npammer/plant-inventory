@@ -1,16 +1,30 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="plant-detail">
+    <img src="{{#if plant.url}}{{plant.url}}{{else}}https://res.cloudinary.com/dvbejvnhk/image/upload/v1604132437/agriculture-natural-plant-fertile-logo-design-template-agricultu-2-2_2_l6gqxs.png{{/if}}"
+        alt="Plant image">
+    <div class="title-edit">
+        <h1>{{plant.name}}</h1>
+        <img class="edit" src="https://res.cloudinary.com/dvbejvnhk/image/upload/v1604216681/Edit_xozexe.png"
+            alt="Edit">
+    </div>
+    <div class="content-container">
+        <h3>{{plant.description}}</h3>
+        <h3>Categories:</h3>
 
-<p>Name: {{plant.name}}</>
-<p>Description: {{plant.description}}</p>
-<p>Price: ${{plant.price}}</p>
-<p>In Stock: {{plant.in_stock}}</p>
-<p>Categories:</p>
+        <div class="category-container">
+            {{#each plant.category as |category|}}
+            <a class="category" href="{{category.link}}">{{category.name}}</a>
+            {{/each}}
+        </div>
+    </div>
 
-{{#each plant.category as |category|}}
-<a href="{{category.link}}">{{category.name}}</a>
-{{/each}}
+    <a href="/inventory/plants" class="main-btn">Back to inventory</a>
 
-<a href="{{plant.link}}/update" class="btn btn-warning btn-block mt-4">Update plant</a>
-<a href="{{plant.link}}/delete" class="btn btn-danger btn-block mt-4">Delete plant</a>
-<a href="/inventory/plants" class="btn btn-primary btn-block mt-4">Back to the plant list</a>
+    <div class="edit-overlay">
+        <a href="{{plant.link}}/update" class="main-btn">Update plant</a>
+        <a href="{{plant.link}}/delete" class="main-btn edit-delete-btn">Delete plant</a>
+    </div>
+    <div class="edit-overlay-background" />
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<!-- TODO: Remove dubble gsap load  -->
+<script src="/javascripts/editOverlay.js"></script>

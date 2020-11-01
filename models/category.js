@@ -17,7 +17,7 @@ var CategorySchema = new Schema({
 });
 
 CategorySchema.virtual('link').get(function () {
-    return `/category/${this._id}`;
+    return `/inventory/category/${this._id}`;
 });
 
 //Export model
