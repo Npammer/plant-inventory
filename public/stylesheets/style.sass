@@ -18,10 +18,12 @@ body
 header
   height: 14%
   padding: 16px
+  position: relative
   display: flex
   justify-content: space-between
   align-items: center
   box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.39)
+  z-index: 6
   a
     line-height: 1
     display: contents
@@ -215,6 +217,49 @@ header
   .edit-delete-btn
     background: linear-gradient(180deg, #FF0000 0%, #C20000 76.56%)
 
+.category
+  display: inline
+  font-size: 3.5em
+  color: white
+  padding: 16px 32px
+  border-radius: 32px
+  background: linear-gradient(180deg, #8BC249 0%, #0F914C 79.17%)
+
+.plant-cards
+  width: 100%
+  position: relative
+  .plant-card
+    padding: 8px 16px 8px 0
+    display: flex
+    img
+      width: 25%
+      height: 25%
+      object-fit: contain
+    .name-category-read-container
+      display: flex
+      flex-basis: 100%
+      justify-content: space-between
+      .name-categories
+        display: flex
+        flex-direction: column
+        justify-content: center
+        h3
+          font-size: 4em
+          margin-bottom: 0.5em
+          color: black
+        h4
+          font-size: 2em
+      .read-more
+        display: flex
+        align-items: center
+        h4
+          padding: 16px
+          white-space: nowrap
+          font-size: 2.5em
+          border: 2px solid #0F914C
+          border-radius: 16px
+          color: #0F914C
+
 // PAGES
 
 // INDEX
@@ -222,11 +267,14 @@ header
   height: 86%
   width: 100%
   overflow-y: scroll
-  .banner // TODO: Fix img
+  .banner
     width: 100%
     height: 20%
     background-image: url("https://res.cloudinary.com/dvbejvnhk/image/upload/v1604057326/unnamed-2_kafgzy.jpg")
     position: relative
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
     .bottom-line
       width: 100%
       height: 12%
@@ -266,19 +314,24 @@ header
   display: flex
   flex-direction: column
   align-items: center
-  margin-top: 64px
+  padding-bottom: 64px
   h1
     font-size: 5.5em
     line-height: 1.2em
     text-align: center
     letter-spacing: 0.1em
+    margin-top: 64px
   hr
     margin: 32px 0
     border-top: 2px solid rgba(15, 145, 76, 0.521)
     width: 80%
-  ul
-    li
-      font-size: 4em
+  .add-plant
+    position: fixed
+    margin: 32px
+    bottom: 0
+    right: 0
+    border: 2px solid white
+    font-weight: 600
 
 // PLANT DETIAL
 .plant-detail
@@ -309,12 +362,5 @@ header
   .category-container
     display: flex
     justify-content: center
-    .category
-      display: inline-block
-      font-size: 3.5em
-      color: white
-      padding: 16px 32px
-      border-radius: 32px
-      background: linear-gradient(180deg, #8BC249 0%, #0F914C 79.17%)
   .main-btn
     margin-bottom: 40px

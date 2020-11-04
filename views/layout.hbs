@@ -48,7 +48,8 @@
     src="https://res.cloudinary.com/dvbejvnhk/image/upload/v1603892113/agriculture-natural-plant-fertile-logo-design-template-agricultu-2_2_n8qvxm.png"
     alt="logo">
   {{{body}}}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  {{#if gsapLoaded}}{{else}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>{{/if}}
   <script src="/javascripts/layout.js"></script>
 </body>
 

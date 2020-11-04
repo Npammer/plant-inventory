@@ -229,6 +229,7 @@ exports.plant_detail = function (req, res, next) {
             res.render("plant_detail", {
                 title: "Plant details",
                 plant,
+                gsapLoaded: true,
             });
         });
 };

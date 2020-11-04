@@ -2,11 +2,28 @@
     <h1>Plants</h1>
     <hr>
 
-    <ul>
-        {{#each plant_list}}
-        <a href="{{this.link}}">
-            <li class="mb-1">{{this.name}}</li>
+    <div class="plant-cards">
+        {{#each plant_list as |plant|}}
+        <a href="{{plant.link}}">
+            <div class="plant-card">
+                <img src="{{#if plant.url}}{{plant.url}}{{else}}https://res.cloudinary.com/dvbejvnhk/image/upload/v1604132437/agriculture-natural-plant-fertile-logo-design-template-agricultu-2-2_2_l6gqxs.png{{/if}}"
+                    alt="Plant image">
+                <div class="name-category-read-container">
+                    <div class="name-categories">
+                        <h3>{{plant.name}}</h3>
+                        <div class="categories-container">
+                            {{#each category as |category|}}
+                            <h4 class="category">{{category.name}}</h4>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="read-more">
+                        <h4>Read more</h4>
+                    </div>
+                </div>
+            </div>
         </a>
         {{/each}}
-    </ul>
+    </div>
+    <a class="category add-plant" href="plant/create">Add plant +</a>
 </div>
